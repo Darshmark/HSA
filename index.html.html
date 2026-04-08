@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evolution of Hindu Succession Rights</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --ink:#1A0A00;
+    --ivory:#F6F0E4;
+    --parchment:#EDE3CC;
+    --gold:#B8943F;
+    --gold-light:#D4AF6A;
+    --crimson:#7A1F1F;
+    --crimson-dark:#4A0E0E;
+    --deep:#120800;
+    --muted:#6B5A42;
+    --phase1:#7A1F1F;
+    --phase2:#5C3A1A;
+    --phase3:#1A3A5C;
+    --phase4:#1A5C2A;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--deep);
+    color:var(--ivory);
+    font-family:'Crimson Pro',Georgia,serif;
+    font-size:18px;
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    background: radial-gradient(ellipse at 20% 50%, #3A0E0E 0%, #1A0800 40%, #0D0500 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8943F' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .scales-svg{width:80px;height:80px;opacity:.9;margin-bottom:2rem;animation:float 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .hero-eyebrow{
+    font-family:'IM Fell English',serif;font-style:italic;
+    font-size:1rem;letter-spacing:.25em;color:var(--gold);
+    text-transform:uppercase;margin-bottom:1.5rem;
+    animation:fadeUp 1s ease both;
+  }
+  .hero-title{
+    font-family:'Cormorant Garamond',serif;font-weight:300;
+    font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.1;
+    color:var(--ivory);margin-bottom:1rem;
+    animation:fadeUp 1s ease .2s both;
+  }
+  .hero-title em{font-style:italic;color:var(--gold-light)}
+  .hero-sub{
+    font-size:1.15rem;color:rgba(246,240,228,.6);max-width:560px;
+    font-style:italic;margin-bottom:3rem;
+    animation:fadeUp 1s ease .4s both;
+  }
+  .hero-phases{
+    display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+    animation:fadeUp 1s ease .6s both;
+  }
+  .phase-pill{
+    border:1px solid rgba(184,148,63,.4);padding:.4rem 1.2rem;
+    font-size:.85rem;letter-spacing:.1em;color:var(--gold);
+    font-family:'Crimson Pro',serif;border-radius:100px;
+  }
+  .ornament{
+    color:var(--gold);font-size:1.5rem;margin:1rem 0;opacity:.5;
+  }
+  .scroll-hint{
+    position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    animation:fadeUp 1s ease 1s both;
+    color:rgba(246,240,228,.4);font-size:.8rem;letter-spacing:.15em;font-style:italic;
+  }
+  .scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--gold));animation:grow 2s ease-in-out infinite}
+  @keyframes grow{0%,100%{height:20px;opacity:.3}50%{height:40px;opacity:.8}}
+
+  /* OVERVIEW STRIP */
+  .overview{
+    background:var(--crimson-dark);padding:3rem 2rem;
+    display:flex;justify-content:center;
+  }
+  .overview-inner{max-width:1100px;width:100%}
+  .overview-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:rgba(184,148,63,.2);border:1px solid rgba(184,148,63,.2);
+  }
+  .ov-cell{
+    background:var(--crimson-dark);padding:2rem 1.5rem;text-align:center;
+    position:relative;
+  }
+  .ov-cell::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+    width:30px;height:2px;background:var(--gold);opacity:0}
+  .ov-cell:hover::after{opacity:1;transition:.3s}
+  .ov-num{
+    font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;
+    color:var(--gold);line-height:1;margin-bottom:.5rem;
+  }
+  .ov-label{font-size:.85rem;letter-spacing:.1em;color:rgba(246,240,228,.6);text-transform:uppercase}
+
+  /* PHASE SECTIONS */
+  .phase-section{
+    padding:6rem 2rem;position:relative;
+    display:flex;justify-content:center;
+  }
+  .phase-section:nth-child(odd){background:#100600}
+  .phase-section:nth-child(even){background:#0D0500}
+  .phase-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
+  .phase-inner.reverse{grid-template-columns:2fr 1fr}
+  .phase-inner.reverse .phase-meta{order:2}
+  .phase-inner.reverse .phase-content{order:1}
+
+  .phase-meta{position:sticky;top:3rem}
+  .phase-num{
+    font-family:'IM Fell English',serif;font-size:5rem;font-weight:400;
+    line-height:1;color:rgba(184,148,63,.15);margin-bottom:.5rem;
+    display:block;
+  }
+  .phase-era{
+    font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:.75rem;font-family:'Crimson Pro',serif;
+  }
+  .phase-name{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:2rem;line-height:1.2;margin-bottom:1rem;
+  }
+  .phase-name em{font-style:italic;font-weight:300;color:var(--gold-light)}
+  .phase-badge{
+    display:inline-block;padding:.3rem .8rem;
+    border:1px solid;font-size:.75rem;letter-spacing:.1em;
+    font-family:'Crimson Pro',serif;margin-bottom:1.5rem;
+  }
+  .phase-summary{font-size:.95rem;color:rgba(246,240,228,.6);font-style:italic;line-height:1.7}
+
+  .phase-content h3{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:1.4rem;margin-bottom:1rem;color:var(--gold-light);
+    display:flex;align-items:center;gap:.75rem;
+  }
+  .phase-content h3::before{content:'§';color:var(--gold);opacity:.5;font-style:italic}
+  .divider{
+    width:100%;height:1px;
+    background:linear-gradient(to right,transparent,rgba(184,148,63,.3),transparent);
+    margin:2rem 0;
+  }
+
+  /* FEATURE CARDS */
+  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,148,63,.1);margin:1.5rem 0}
+  .feature-card{
+    background:rgba(10,4,0,.6);padding:1.5rem;
+    border:1px solid rgba(184,148,63,.08);
+  }
+  .feature-icon{font-size:1.5rem;margin-bottom:.75rem;display:block}
+  .feature-title{
+    font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;
+    color:var(--gold-light);margin-bottom:.5rem;
+  }
+  .feature-text{font-size:.9rem;color:rgba(246,240,228,.65);line-height:1.65}
+
+  /* PROVISION ITEMS */
+  .provision-list{list-style:none;margin:1.5rem 0}
+  .provision-list li{
+    padding:.85rem 1rem .85rem 2.5rem;position:relative;
+    border-left:2px solid rgba(184,148,63,.2);margin-bottom:.5rem;
+    font-size:.95rem;color:rgba(246,240,228,.8);
+    transition:border-color .3s;
+  }
+  .provision-list li:hover{border-left-color:var(--gold)}
+  .provision-list li::before{
+    content:'▸';position:absolute;left:.75rem;
+    color:var(--gold);font-size:.75rem;top:.9rem;
+  }
+  .provision-list li strong{color:var(--ivory);font-weight:600}
+
+  /* CASE CARD */
+  .case-card{
+    border:1px solid rgba(184,148,63,.25);
+    background:rgba(184,148,63,.04);
+    padding:2rem;margin:2.5rem 0;position:relative;
+  }
+  .case-card::before{
+    content:'';position:absolute;top:0;left:0;
+    width:4px;height:100%;background:var(--gold);
+  }
+  .case-card::after{
+    content:'JUDICIAL MILESTONE';position:absolute;top:-10px;left:2rem;
+    font-size:.65rem;letter-spacing:.2em;color:var(--gold);
+    background:var(--deep);padding:0 .5rem;font-family:'Crimson Pro',serif;
+  }
+  .case-name{
+    font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;
+    color:var(--ivory);margin-bottom:.5rem;font-style:italic;
+  }
+  .case-year{
+    font-size:.75rem;letter-spacing:.15em;color:var(--gold);
+    text-transform:uppercase;margin-bottom:1rem;
+  }
+  .case-sections{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.25rem}
+  .case-section-title{
+    font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:.5rem;font-family:'Crimson Pro',serif;
+  }
+  .case-section-text{font-size:.9rem;color:rgba(246,240,228,.7);line-height:1.65}
+  .case-significance{
+    grid-column:1/-1;padding-top:1.25rem;border-top:1px solid rgba(184,148,63,.15);
+    font-style:italic;color:rgba(246,240,228,.8);font-size:.95rem;
+  }
+  .case-significance::before{content:'"';color:var(--gold);font-size:2rem;line-height:.5;vertical-align:-.5rem;margin-right:.25rem}
+
+  /* PHASE COLORS */
+  .p1 .phase-badge{border-color:var(--phase1);color:#F4A0A0;background:rgba(122,31,31,.1)}
+  .p1 .phase-name em,.p1 h3{color:#F4A0A0}
+  .p2 .phase-badge{border-color:#8B6030;color:#F4C080;background:rgba(92,58,26,.1)}
+  .p2 .phase-name em,.p2 h3{color:#F4C080}
+  .p3 .phase-badge{border-color:#1A3A5C;color:#80C0F4;background:rgba(26,58,92,.1)}
+  .p3 .phase-name em,.p3 h3{color:#80C0F4}
+  .p4 .phase-badge{border-color:#1A5C2A;color:#80F4A0;background:rgba(26,92,42,.1)}
+  .p4 .phase-name em,.p4 h3{color:#80F4A0}
+
+  /* TRANSITION CARDS */
+  .journey-strip{
+    background:var(--crimson-dark);padding:4rem 2rem;
+    display:flex;justify-content:center;
+  }
+  .journey-inner{max-width:1100px;width:100%}
+  .journey-title{
+    font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;
+    text-align:center;margin-bottom:3rem;color:var(--ivory);
+  }
+  .journey-flow{
+    display:flex;align-items:center;gap:0;
+  }
+  .journey-node{
+    flex:1;text-align:center;padding:2rem 1rem;
+    border:1px solid rgba(184,148,63,.15);position:relative;
+  }
+  .journey-icon{font-size:2rem;display:block;margin-bottom:.75rem}
+  .journey-node-title{
+    font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;
+    color:var(--gold-light);
+  }
+  .journey-arrow{
+    color:var(--gold);font-size:1.5rem;opacity:.5;flex-shrink:0;padding:0 .5rem;
+  }
+
+  /* FOOTER */
+  footer{
+    background:#080300;padding:3rem 2rem;text-align:center;
+    border-top:1px solid rgba(184,148,63,.1);
+  }
+  footer p{color:rgba(246,240,228,.3);font-size:.85rem;font-style:italic}
+  .footer-ornament{
+    font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;
+    color:var(--gold);opacity:.3;display:block;margin-bottom:1rem;
+  }
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+  /* REVEAL ANIMATION */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  @media(max-width:768px){
+    .phase-inner,.phase-inner.reverse{grid-template-columns:1fr}
+    .phase-inner.reverse .phase-meta{order:0}
+    .overview-grid{grid-template-columns:1fr 1fr}
+    .feature-grid,.case-sections{grid-template-columns:1fr}
+    .journey-flow{flex-direction:column}
+    .journey-arrow{transform:rotate(90deg)}
+    .hero-title{font-size:2.5rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="scales-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="40" y1="8" x2="40" y2="72" stroke="#D4AF6A" stroke-width="1.5"/>
+    <line x1="10" y1="20" x2="70" y2="20" stroke="#D4AF6A" stroke-width="1.5"/>
+    <line x1="10" y1="20" x2="20" y2="48" stroke="#D4AF6A" stroke-width="1"/>
+    <line x1="10" y1="20" x2="0" y2="48" stroke="#D4AF6A" stroke-width="1"/>
+    <ellipse cx="10" cy="50" rx="14" ry="6" fill="none" stroke="#D4AF6A" stroke-width="1"/>
+    <line x1="70" y1="20" x2="80" y2="48" stroke="#D4AF6A" stroke-width="1"/>
+    <line x1="70" y1="20" x2="60" y2="48" stroke="#D4AF6A" stroke-width="1"/>
+    <ellipse cx="70" cy="50" rx="14" ry="6" fill="none" stroke="#D4AF6A" stroke-width="1"/>
+    <circle cx="40" cy="8" r="3" fill="#D4AF6A"/>
+    <rect x="34" y="70" width="12" height="2" fill="#D4AF6A"/>
+  </svg>
+  <p class="hero-eyebrow">Family Law · Constitutional History</p>
+  <h1 class="hero-title">The <em>Evolution</em> of<br>Hindu Succession Rights</h1>
+  <p class="hero-sub">A journey from restriction to recognition — tracing four centuries of transformation in inheritance law across the Indian subcontinent</p>
+  <div class="hero-phases">
+    <span class="phase-pill">Pre-1956 · Shastric Era</span>
+    <span class="phase-pill">1937 · First Reform</span>
+    <span class="phase-pill">1956 · Great Shift</span>
+    <span class="phase-pill">2005 · Equality Act</span>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- OVERVIEW NUMBERS -->
+<div class="overview">
+  <div class="overview-inner">
+    <div class="overview-grid">
+      <div class="ov-cell reveal">
+        <div class="ov-num">4</div>
+        <div class="ov-label">Legislative Phases</div>
+      </div>
+      <div class="ov-cell reveal">
+        <div class="ov-num">5+</div>
+        <div class="ov-label">Landmark Judgments</div>
+      </div>
+      <div class="ov-cell reveal">
+        <div class="ov-num">68</div>
+        <div class="ov-label">Years of Reform</div>
+      </div>
+      <div class="ov-cell reveal">
+        <div class="ov-num">1</div>
+        <div class="ov-label">Path to Equality</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 1 -->
+<section class="phase-section p1">
+  <div class="phase-inner">
+    <div class="phase-meta reveal">
+      <span class="phase-num">01</span>
+      <p class="phase-era">Ancient Era — June 16, 1956</p>
+      <h2 class="phase-name">Era of <em>Shastric Law</em></h2>
+      <span class="phase-badge">Pre-Hindu Succession Act</span>
+      <p class="phase-summary">The ancient framework governing inheritance was rooted entirely in classical Hindu texts, enshrining a strictly male-dominated system where women were effectively invisible in the law of property.</p>
+    </div>
+    <div class="phase-content reveal">
+      <h3>The Coparcenary System</h3>
+      <p style="color:rgba(246,240,228,.75);margin-bottom:1.5rem">Under the <strong>Mitakshara School</strong>, the dominant school of Hindu law, coparcenary was an exclusive male preserve — a narrow group comprising son, grandson, and great-grandson who acquired an interest in ancestral property by birth. Women were categorically excluded.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="feature-icon">⚖</span>
+          <div class="feature-title">Male-Only Coparcenary</div>
+          <div class="feature-text">Only male descendants within three generations of the last holder could claim coparcenary rights by birth. Daughters had no such recognition.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⌛</span>
+          <div class="feature-title">Doctrine of Survivorship</div>
+          <div class="feature-text">Upon a male coparcener's death, his share was not inherited by his widow or daughters — it was absorbed entirely by the surviving male coparceners.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <div class="feature-title">Women's Limited Estate</div>
+          <div class="feature-text">Widows could use property for their lifetime but held no power of alienation. Upon her death, the property reverted to her husband's male heirs.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📜</span>
+          <div class="feature-title">No Testamentary Freedom</div>
+          <div class="feature-text">The concept of writing a Will was traditionally alien to Hindu law. The focus remained entirely on preserving joint family property within the male lineage.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <h3>The Legal Position of Women</h3>
+      <ul class="provision-list">
+        <li><strong>Stridhan</strong> — The only property a woman could truly own was her personal gifts received at marriage, which she held absolutely.</li>
+        <li><strong>Hindu Woman's Estate</strong> — Any other property she received was held as a limited estate with no power to alienate.</li>
+        <li><strong>Reversion</strong> — All property held by a widow reverted to her husband's reversioners upon her death, not to her own heirs.</li>
+        <li><strong>No Right to Partition</strong> — Women had no legal standing to demand partition of joint family property under any circumstances.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 2 -->
+<section class="phase-section p2">
+  <div class="phase-inner reverse">
+    <div class="phase-meta reveal">
+      <span class="phase-num">02</span>
+      <p class="phase-era">1937 · Colonial Reform</p>
+      <h2 class="phase-name">Hindu Women's Right to<br><em>Property Act</em></h2>
+      <span class="phase-badge">First Statutory Recognition</span>
+      <p class="phase-summary">The first tentative step toward acknowledging women as legal stakeholders in property — a partial reform that opened a small window without truly dismantling the patriarchal edifice.</p>
+    </div>
+    <div class="phase-content reveal">
+      <h3>Key Changes Introduced</h3>
+      <ul class="provision-list">
+        <li><strong>Widows granted a share</strong> equal to a son in her husband's property when he died intestate, allowing her to step into the coparcenary.</li>
+        <li><strong>Applied to joint family property</strong> — for the first time, a woman could hold an interest in coparcenary property.</li>
+        <li><strong>Right of residence</strong> in the matrimonial home was recognised for widows without a requirement that male members agree.</li>
+      </ul>
+
+      <div class="divider"></div>
+      <h3>The Critical Limitation</h3>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-title">Still a Limited Estate</div>
+          <div class="feature-text">The 1937 Act created what came to be called the "Hindu Woman's Estate" — ownership without alienation. She could not sell, gift, mortgage, or bequeath the property.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">No Coparcenary by Birth</div>
+          <div class="feature-text">A widow entered the coparcenary only as a successor, never as a coparcener by birth. The fundamental inequality of the Mitakshara system remained intact.</div>
+        </div>
+      </div>
+      <p style="color:rgba(246,240,228,.6);font-style:italic;margin-top:1.5rem;font-size:.95rem">The 1937 Act was reform in form, not in substance. It recognised women as legal stakeholders for the first time while ensuring the patriarchal structure of inheritance remained fundamentally undisturbed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 3 -->
+<section class="phase-section p3">
+  <div class="phase-inner">
+    <div class="phase-meta reveal">
+      <span class="phase-num">03</span>
+      <p class="phase-era">17 June 1956 — 8 September 2005</p>
+      <h2 class="phase-name">The <em>Great Shift</em></h2>
+      <span class="phase-badge">Hindu Succession Act, 1956</span>
+      <p class="phase-summary">A landmark codification that revolutionised women's personal ownership of property, introduced testamentary freedom, and created the ingenious mechanism of notional partition — while still leaving coparcenary a male preserve.</p>
+    </div>
+    <div class="phase-content reveal">
+      <h3>Section 14 · Absolute Ownership</h3>
+      <p style="color:rgba(246,240,228,.75);margin-bottom:1rem">The most transformative provision of the Act. Section 14(1) converted <em>all</em> limited estates held by Hindu women into full, absolute ownership — with immediate effect and retrospectively for property already held.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-title">Full Powers of Ownership</div>
+          <div class="feature-text">For the first time, a woman could sell, gift, mortgage, lease, or dispose of her property by will — exercising every incident of ownership that men had always enjoyed.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Retrospective Application</div>
+          <div class="feature-text">The conversion applied to property acquired both before and after the Act, sweeping away decades of accumulated limited estates held by widows across India.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <h3>Section 30 · Testamentary Freedom</h3>
+      <p style="color:rgba(246,240,228,.75);margin-bottom:1.5rem">For the first time in Hindu law, any Hindu — male or female — could dispose of their interest in joint family property by a Will. This formally ended the absolute dominance of the survivorship doctrine.</p>
+
+      <h3>Section 6 · Notional Partition</h3>
+      <ul class="provision-list">
+        <li><strong>Coparcenary remained male-only</strong> — the Act did not disturb the Mitakshara coparcenary's gender restriction.</li>
+        <li><strong>A protective fiction</strong> — if a male coparcener died leaving a Class I female heir (widow, daughter, mother), the law notionally assumed a partition had occurred just before his death.</li>
+        <li><strong>Succession, not survivorship</strong> — his notional share then devolved to his heirs by succession, preventing the surviving males from absorbing it.</li>
+      </ul>
+
+      <!-- CASE: Tulasamma -->
+      <div class="case-card">
+        <div class="case-name">V. Tulasamma v. Sesha Reddy</div>
+        <div class="case-year">Supreme Court of India · 1977</div>
+        <p style="color:rgba(246,240,228,.75);font-size:.95rem;margin-bottom:1rem">A watershed ruling that plugged a dangerous loophole in Section 14, preventing male heirs from using technical restrictions to circumvent women's ownership rights.</p>
+        <div class="case-sections">
+          <div>
+            <div class="case-section-title">Issue Before Court</div>
+            <div class="case-section-text">Whether property received by a widow in lieu of her right to maintenance could be held as a "limited estate" under a pre-existing deed of arrangement, thus denying her absolute ownership under Section 14(1).</div>
+          </div>
+          <div>
+            <div class="case-section-title">The Judgment</div>
+            <div class="case-section-text">The Supreme Court held that a widow's right to maintenance is a pre-existing right. Any property given in satisfaction of that right automatically becomes her absolute property under Section 14(1).</div>
+          </div>
+          <div class="case-significance">Male relatives could no longer use conditions in a deed to confine a woman to a limited estate when she was receiving property in exchange for a pre-existing entitlement.</div>
+        </div>
+      </div>
+
+      <!-- CASE: Gurupad -->
+      <div class="case-card">
+        <div class="case-name">Gurupad Khandappa Magdum v. Hirabai Khandappa Magdum</div>
+        <div class="case-year">Supreme Court of India · 1978</div>
+        <div class="case-sections">
+          <div>
+            <div class="case-section-title">The Question</div>
+            <div class="case-section-text">How should a female heir's share be calculated under the notional partition doctrine of Section 6 of the 1956 Act?</div>
+          </div>
+          <div>
+            <div class="case-section-title">The Ruling</div>
+            <div class="case-section-text">The Court held that the notional partition must be assumed to be real and complete — the female heir receives a share as if an actual partition had occurred moments before the coparcener's death.</div>
+          </div>
+          <div class="case-significance">Moved the law from theoretical protection to practical benefit — ensuring women received a fair, calculable, and enforceable share of joint family property.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 4 -->
+<section class="phase-section p4">
+  <div class="phase-inner reverse">
+    <div class="phase-meta reveal">
+      <span class="phase-num">04</span>
+      <p class="phase-era">9 September 2005 — Present</p>
+      <h2 class="phase-name">The Age of <em>Equality</em></h2>
+      <span class="phase-badge">Amendment Act, 2005</span>
+      <p class="phase-summary">The most profound transformation in the history of Hindu succession law — daughters became coparceners by birth, equal in every respect to sons, completing a journey begun centuries earlier.</p>
+    </div>
+    <div class="phase-content reveal">
+      <h3>Daughters as Coparceners</h3>
+      <p style="color:rgba(246,240,228,.75);margin-bottom:1.5rem">The 2005 Amendment made one historic change to Section 6: the daughter of a coparcener shall, by birth, become a coparcener in her own right in the same manner as the son. This simple sentence abolished millennia of gender exclusion.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="feature-icon">⚖</span>
+          <div class="feature-title">Equal Rights by Birth</div>
+          <div class="feature-text">A daughter acquires an interest in ancestral property at birth — the same unobstructed right that sons have always held. The right is not contingent on marriage, education, or any other condition.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📋</span>
+          <div class="feature-title">Equal Liabilities</div>
+          <div class="feature-text">With equal rights come equal responsibilities. A daughter is liable for the debts of the joint family to the same extent as a son — a full and symmetric equality.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🏛</span>
+          <div class="feature-title">Right to Demand Partition</div>
+          <div class="feature-text">The old restriction that prevented a female heir from demanding partition of the family dwelling house without male consent was expressly abolished.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📝</span>
+          <div class="feature-title">Full Testamentary Rights</div>
+          <div class="feature-text">A daughter may now alienate, bequeath, or dispose of her coparcenary interest in any manner she chooses — a right identical in every dimension to that of a son.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <h3>Devolution of Property</h3>
+      <ul class="provision-list">
+        <li><strong>Survivorship eliminated</strong> — the interest of a male Hindu in Mitakshara coparcenary property now devolves entirely by testamentary or intestate succession, not by survivorship.</li>
+        <li><strong>Class I heirs</strong> — daughters are Class I heirs with an equal share alongside sons, widows, and the deceased's mother.</li>
+        <li><strong>Gender-neutral succession</strong> — the Schedule of heirs was amended to remove all gender-based preferences and restrictions.</li>
+      </ul>
+
+      <!-- CASE: Prakash v Phulavati -->
+      <div class="case-card">
+        <div class="case-name">Prakash v. Phulavati</div>
+        <div class="case-year">Supreme Court of India · 2015 · The Confusion Phase</div>
+        <div class="case-sections">
+          <div>
+            <div class="case-section-title">The Disputed Question</div>
+            <div class="case-section-text">Whether the 2005 Amendment grants coparcenary rights to daughters whose fathers had died before the Amendment came into force on 9 September 2005.</div>
+          </div>
+          <div>
+            <div class="case-section-title">Judgment & Its Problem</div>
+            <div class="case-section-text">The Court held the Amendment applied only prospectively — rights arose only if the father was alive on the date the Amendment came into force. This created grave inconsistency and was widely criticised.</div>
+          </div>
+          <div class="case-significance">This restrictive reading inadvertently created a class of daughters who were denied the very equality the Amendment was designed to confer — a position the Supreme Court would be compelled to revisit.</div>
+        </div>
+      </div>
+
+      <!-- CASE: Vineeta Sharma -->
+      <div class="case-card">
+        <div class="case-name">Vineeta Sharma v. Rakesh Sharma</div>
+        <div class="case-year">Supreme Court of India · 11 August 2020 · The Final Settlement</div>
+        <p style="color:rgba(246,240,228,.75);font-size:.95rem;margin-bottom:1rem">A Constitution Bench decisively overruled Prakash v. Phulavati and settled the law in unambiguous terms, aligning it fully with the constitutional mandate of equality.</p>
+        <div class="case-sections">
+          <div>
+            <div class="case-section-title">The Core Holding</div>
+            <div class="case-section-text">Since the right to be a coparcener is conferred by birth, and a daughter is a daughter always — regardless of when the father dies — the 2005 Amendment applies even if the father died before its commencement.</div>
+          </div>
+          <div>
+            <div class="case-section-title">The Principle</div>
+            <div class="case-section-text">The right is "unobstructed" and vests from birth. It cannot be defeated by the subsequent death of the father because the interest arose at the moment of the daughter's birth, not at the father's death.</div>
+          </div>
+          <div class="case-significance">The daughter is and was always a coparcener by birth. The law was finally aligned with the Constitution's guarantee of equality and non-discrimination on the basis of sex — a journey of nearly seven decades completed.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY STRIP -->
+<div class="journey-strip">
+  <div class="journey-inner">
+    <h2 class="journey-title reveal" style="font-family:'Cormorant Garamond',serif;font-weight:300">The Arc of the Law</h2>
+    <div class="journey-flow reveal">
+      <div class="journey-node">
+        <span class="journey-icon">🔒</span>
+        <div class="journey-node-title">Restriction</div>
+        <p style="font-size:.8rem;color:rgba(246,240,228,.5);margin-top:.5rem">Male-only inheritance under Shastric law</p>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-node">
+        <span class="journey-icon">🏛</span>
+        <div class="journey-node-title">Reform</div>
+        <p style="font-size:.8rem;color:rgba(246,240,228,.5);margin-top:.5rem">First statutory recognition for widows in 1937</p>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-node">
+        <span class="journey-icon">📖</span>
+        <div class="journey-node-title">Recognition</div>
+        <p style="font-size:.8rem;color:rgba(246,240,228,.5);margin-top:.5rem">Absolute ownership and testamentary freedom in 1956</p>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-node">
+        <span class="journey-icon">⚖</span>
+        <div class="journey-node-title">Equality</div>
+        <p style="font-size:.8rem;color:rgba(246,240,228,.5);margin-top:.5rem">Full coparcenary rights for daughters from 2005</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-ornament">§</span>
+  <p>Timeline of Evolutionary Development of Succession Rights under Hindu Law</p>
+  <p style="margin-top:.5rem">Family Law Assignment · Academic Reference Document</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
